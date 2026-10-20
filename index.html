@@ -3,131 +3,300 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CENTURY 21 Gentry Realtors</title>
+  <title>CENTURY 21 Gentry Realtors | New Jersey Real Estate</title>
+
   <style>
+    :root {
+      --black: #1c1c1c;
+      --gold: #b59a65;
+      --cream: #f5f2ec;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      color: #252525;
-      background: #faf9f6;
+      color: var(--black);
+      background: var(--cream);
     }
+
     header {
-      background: #171717;
+      background: var(--black);
       color: white;
-      padding: 22px 7%;
+      padding: 24px 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 20px;
     }
-    .brand {
+
+    .logo {
       font-size: 22px;
       font-weight: bold;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
     }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 10px;
-      font-size: 14px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
     .hero {
-      padding: 110px 8%;
+      min-height: 620px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      background: #d8d0bf;
+      color: white;
+      padding: 80px 20px;
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.62),
+          rgba(0,0,0,0.55)
+        ),
+        url("images/hero.jpg") center/cover;
+      background-color: #48443f;
     }
-    .hero h1 {
-      font-size: clamp(34px, 5vw, 62px);
-      margin-bottom: 15px;
+
+    .hero-content {
+      max-width: 850px;
     }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 76px);
+      font-weight: normal;
+      line-height: 1.15;
+      margin: 25px 0;
+    }
+
     .hero p {
       font-size: 19px;
+      line-height: 1.7;
     }
+
     .button {
       display: inline-block;
-      background: #171717;
-      color: white;
-      padding: 15px 28px;
-      margin-top: 20px;
+      margin: 15px 8px 0;
+      padding: 17px 30px;
+      background: var(--gold);
+      color: var(--black);
       text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+      font-size: 12px;
     }
+
+    .button-outline {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+    }
+
     section {
-      padding: 65px 8%;
+      padding: 90px 7%;
       text-align: center;
     }
+
+    section h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: normal;
+    }
+
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 35px;
+      grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+      margin-top: 45px;
     }
+
     .card {
       background: white;
-      padding: 35px 20px;
-      border: 1px solid #e5e0d7;
+      padding: 55px 25px;
+      border-bottom: 3px solid var(--gold);
     }
+
+    .card h3 {
+      font-family: Georgia, serif;
+      font-size: 25px;
+    }
+
+    .card p {
+      line-height: 1.7;
+      color: #666;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.9;
+    }
+
     footer {
-      background: #171717;
+      background: var(--black);
       color: white;
-      padding: 35px;
       text-align: center;
+      padding: 45px 20px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hero {
+        min-height: 520px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <div class="brand">CENTURY 21 | GENTRY</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Buy</a>
-    <a href="#services">Rent</a>
-    <a href="#services">Sell</a>
-    <a href="#about">About Us</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header>
+    <div class="logo">
+      CENTURY <span>21</span> | GENTRY
+    </div>
 
-<main>
-  <div class="hero" id="home">
-    <h1>Find Your Place to Call Home</h1>
-    <p>Your real estate journey starts here.</p>
-    <a class="button" href="#services">Explore Our Services</a>
-  </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Buy</a>
+      <a href="#services">Rent</a>
+      <a href="#services">Sell</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <section id="services">
-    <h2>Our Real Estate Services</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Buy a Home</h3>
-        <p>Explore your home buying options.</p>
-      </div>
-      <div class="card">
-        <h3>Rent a Home</h3>
-        <p>Find a place that fits your lifestyle.</p>
-      </div>
-      <div class="card">
-        <h3>Sell Your Property</h3>
-        <p>Connect with our real estate team.</p>
+  <main>
+    <div class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">
+          New Jersey Real Estate
+        </div>
+
+        <h1>
+          Exceptional Homes.<br>
+          Extraordinary Living.
+        </h1>
+
+        <p>
+          Find your place to call home with
+          CENTURY 21 Gentry Realtors.
+        </p>
+
+        <a href="#services" class="button">
+          Explore Properties
+        </a>
+
+        <a href="#contact"
+           class="button button-outline">
+          Contact Our Team
+        </a>
       </div>
     </div>
-  </section>
 
-  <section id="about">
-    <h2>Welcome to CENTURY 21 Gentry Realtors</h2>
-    <p>Helping clients navigate their real estate journey in New Jersey.</p>
-  </section>
+    <section id="services">
+      <div class="eyebrow">What We Do</div>
+      <h2>Our Real Estate Services</h2>
 
-  <section id="contact">
-    <h2>Contact Our Team</h2>
-    <p>We look forward to hearing from you.</p>
-  </section>
-</main>
+      <div class="cards">
+        <div class="card">
+          <h3>Buy a Home</h3>
+          <p>
+            Discover properties and explore
+            your homeownership opportunities.
+          </p>
+        </div>
 
-<footer>
-  <p>CENTURY 21 Gentry Realtors</p>
-</footer>
+        <div class="card">
+          <h3>Rent a Home</h3>
+          <p>
+            Find a rental that fits
+            your needs and lifestyle.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Sell Your Property</h3>
+          <p>
+            Connect with our team to discuss
+            your real estate goals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="eyebrow">Who We Are</div>
+      <h2>Welcome to Gentry Realtors</h2>
+
+      <p>
+        CENTURY 21 Gentry Realtors serves
+        clients navigating the New Jersey
+        real estate market. Whether buying,
+        selling, or renting, our team is
+        here to assist you.
+      </p>
+    </section>
+
+    <section id="contact">
+      <div class="eyebrow">Get In Touch</div>
+      <h2>Let's Find Your Next Home</h2>
+      <p>Connect with our real estate team.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>CENTURY 21 Gentry Realtors</p>
+    <p>New Jersey Real Estate</p>
+  </footer>
 
 </body>
 </html>
