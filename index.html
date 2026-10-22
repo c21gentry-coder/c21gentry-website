@@ -1,372 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CENTURY 21 Gentry Realtors | New Jersey Real Estate</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CENTURY 21 Gentry Realtors in Little Ferry, New Jersey. Explore buying, selling, and renting homes.">
+<title>CENTURY 21 Gentry Realtors | New Jersey Real Estate</title>
 
-  <style>
-    :root {
-      --black: #1c1c1c;
-      --gold: #b59a65;
-      --cream: #f5f2ec;
-      --white: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: var(--black);
-      background: var(--cream);
-    }
-
-    header {
-      background: var(--black);
-      color: white;
-      padding: 24px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    .logo span {
-      color: var(--gold);
-    }
-
-    nav {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    nav a:hover {
-      color: var(--gold);
-    }
-
-    .hero {
-      min-height: 620px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 80px 20px;
-      background:
-        linear-gradient(
-          rgba(0,0,0,0.62),
-          rgba(0,0,0,0.55)
-        ),
-        url("images/hero.jpg") center/cover;
-      background-color: #48443f;
-    }
-
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 13px;
-    }
-
-    h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(42px, 6vw, 76px);
-      font-weight: normal;
-      line-height: 1.15;
-      margin: 25px 0;
-    }
-
-    .hero p {
-      font-size: 19px;
-      line-height: 1.7;
-    }
-
-    .button {
-      display: inline-block;
-      margin: 15px 8px 0;
-      padding: 17px 30px;
-      background: var(--gold);
-      color: var(--black);
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: bold;
-      font-size: 12px;
-    }
-
-    .button-outline {
-      background: transparent;
-      border: 1px solid white;
-      color: white;
-    }
-
-    section {
-      padding: 90px 7%;
-      text-align: center;
-    }
-
-    section h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(30px, 4vw, 46px);
-      font-weight: normal;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(230px, 1fr));
-      gap: 25px;
-      margin-top: 45px;
-    }
-
-    .card {
-      background: white;
-      padding: 55px 25px;
-      border-bottom: 3px solid var(--gold);
-    }
-
-    .card h3 {
-      font-family: Georgia, serif;
-      font-size: 25px;
-    }
-
-    .card p {
-      line-height: 1.7;
-      color: #666;
-    }
-
-    .about {
-      background: white;
-    }
-
-    .about p {
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.9;
-    }
-
-    footer {
-      background: var(--black);
-      color: white;
-      text-align: center;
-      padding: 45px 20px;
-    }
-
-    @media (max-width: 700px) {
-      header {
-        justify-content: center;
-        text-align: center;
-      }
-
-      nav {
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .hero {
-        min-height: 520px;
-      }
-    }
-.team-section {
-  padding: 90px 8%;
-  background: #f8f7f4;
+<style>
+:root {
+  --gold: #ad8d50;
+  --dark: #242424;
+  --cream: #f8f6f2;
+  --white: #ffffff;
+  --gray: #666666;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+  background: var(--white);
+}
+a { transition: color .2s, background .2s; }
+header {
+  background: white;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.logo {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 27px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+.logo span { color: var(--gold); }
+.logo small {
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+  letter-spacing: 4px;
+  margin-top: 7px;
+}
+nav {
+  display: flex;
+  gap: 23px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+nav a {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 13px;
+}
+nav a:hover { color: var(--gold); }
+.phone-button {
+  background: var(--gold);
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 3px;
+}
+.hero {
+  min-height: 670px;
+  display: flex;
+  align-items: center;
+  padding: 85px 5%;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.99) 0%,
+      rgba(255,255,255,.95) 25%,
+      rgba(255,255,255,.65) 45%,
+      rgba(255,255,255,.02) 76%
+    ),
+    url("office.jpg") center / cover no-repeat;
+}
+.hero-content { max-width: 740px; }
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13px;
+  font-weight: bold;
+}
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+}
+h1 {
+  font-size: clamp(42px, 5.3vw, 75px);
+  line-height: 1.13;
+  margin: 24px 0;
+}
+h1 span { color: var(--gold); }
+.hero p {
+  font-size: 19px;
+  line-height: 1.7;
+  max-width: 530px;
+}
+.button {
+  display: inline-block;
+  padding: 17px 26px;
+  margin: 12px 8px 0 0;
+  background: var(--gold);
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: 1px solid var(--gold);
+}
+.button:hover { background: var(--dark); }
+.button-outline {
+  background: white;
+  color: var(--dark);
+}
+.button-outline:hover { color: white; }
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--cream);
+  padding: 35px 5%;
+  gap: 15px;
+}
+.quick-link {
+  padding: 20px;
+  border-right: 1px solid #ded8cc;
+}
+.quick-link:last-child { border-right: none; }
+.quick-link h3 {
+  font-size: 23px;
+  margin: 0 0 10px;
+}
+.quick-link p {
+  color: var(--gray);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 14px;
+}
+section {
+  padding: 85px 7%;
   text-align: center;
 }
-
-.team-section h2 {
-  font-family: Georgia, serif;
-  font-size: 42px;
-  color: #222;
-  margin-bottom: 15px;
+section h2 {
+  font-size: clamp(32px, 4vw, 46px);
+  margin: 18px 0;
 }
-
-.team-section > p {
-  color: #666;
-  margin-bottom: 45px;
+.section-intro {
+  color: var(--gray);
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 35px;
 }
-
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+.card {
+  background: white;
+  padding: 45px 25px;
+  border: 1px solid #e8e3da;
+  border-bottom: 3px solid var(--gold);
+}
+.card h3 { font-size: 25px; }
+.card p {
+  color: var(--gray);
+  line-height: 1.7;
+}
+.services, .team-section, .contact {
+  background: var(--cream);
+}
+.property-placeholder {
+  min-height: 185px;
+  background: #eeeae2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  padding: 20px;
+}
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 45px auto 0;
 }
-
 .agent-card {
   background: white;
   padding: 40px 20px;
   border: 1px solid #e5e0d6;
-  transition: transform 0.3s ease;
+  transition: transform .2s;
 }
-
-.agent-card:hover {
-  transform: translateY(-5px);
-}
-
-.agent-card h3 {
-  font-family: Georgia, serif;
-  font-size: 23px;
-  color: #242424;
-}
-
-.agent-card p {
-  color: #777;
-}
-
+.agent-card:hover { transform: translateY(-4px); }
+.agent-card h3 { font-size: 23px; }
+.agent-card p { color: #777; }
 .agent-card a {
   display: inline-block;
-  margin-top: 20px;
   padding: 12px 24px;
-  background: #c5a46d;
-  color: #111;
+  margin-top: 15px;
+  background: var(--gold);
+  color: white;
   text-decoration: none;
   font-size: 12px;
-  letter-spacing: 1px;
 }
-
-@media (max-width: 768px) {
-  .team-grid {
-    grid-template-columns: 1fr;
+.about p {
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.9;
+  color: var(--gray);
+}
+.contact p { line-height: 1.8; }
+.contact a:not(.button) { color: var(--dark); }
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 45px 20px;
+  line-height: 1.8;
+}
+@media (max-width: 950px) {
+  header { justify-content: center; text-align: center; }
+  nav { justify-content: center; }
+  .quick-links { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .logo { font-size: 23px; }
+  .hero {
+    min-height: 570px;
+    padding: 65px 7%;
+    background:
+      linear-gradient(
+        rgba(255,255,255,.94),
+        rgba(255,255,255,.76)
+      ),
+      url("office.jpg") center / cover no-repeat;
   }
+  .hero p { font-size: 16px; }
+  .quick-links, .team-grid { grid-template-columns: 1fr; }
+  .quick-link {
+    border-right: none;
+    border-bottom: 1px solid #ded8cc;
+  }
+  section { padding: 65px 6%; }
 }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">
-      CENTURY <span>21</span> | GENTRY
+<header>
+  <a class="logo" href="#home">
+    CENTURY <span>21</span>
+    <small>GENTRY REALTORS</small>
+  </a>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#buy">Buy</a>
+    <a href="#rent">Rent</a>
+    <a href="#services">Sell</a>
+    <a href="#agents">Our Team</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <a class="phone-button" href="tel:+12016411333">
+    (201) 641-1333
+  </a>
+</header>
+
+<main>
+
+<div class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">New Jersey Real Estate</div>
+
+    <h1>
+      Exceptional Homes.<br>
+      <span>Extraordinary</span> Living.
+    </h1>
+
+    <p>
+      Your trusted real estate partner in
+      Little Ferry and throughout New Jersey.
+    </p>
+
+    <a href="#properties" class="button">
+      Explore Properties
+    </a>
+    <a href="#contact" class="button button-outline">
+      Contact Our Team
+    </a>
+  </div>
+</div>
+
+<div class="quick-links">
+  <div class="quick-link">
+    <h3>Buy a Home</h3>
+    <p>Find the perfect property for your lifestyle.</p>
+  </div>
+  <div class="quick-link">
+    <h3>Rent a Home</h3>
+    <p>Explore rental properties.</p>
+  </div>
+  <div class="quick-link">
+    <h3>Sell Your Property</h3>
+    <p>Get guidance for your real estate goals.</p>
+  </div>
+  <div class="quick-link">
+    <h3>Visit Our Office</h3>
+    <p>170 Main St, Little Ferry, NJ 07643</p>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="eyebrow">What We Do</div>
+  <h2>Our Real Estate Services</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Buy a Home</h3>
+      <p>Discover homes and explore homeownership opportunities.</p>
     </div>
-
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#buy">Buy</a>
-      <a href="#rent">Rent</a>
-      <a href="#services">Sell</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <div class="hero" id="home">
-      <div class="hero-content">
-        <div class="eyebrow">
-          New Jersey Real Estate
-        </div>
-
-        <h1>
-          Exceptional Homes.<br>
-          Extraordinary Living.
-        </h1>
-
-        <p>
-          Find your place to call home with
-          CENTURY 21 Gentry Realtors.
-        </p>
-
-        <a href="#services" class="button">
-          Explore Properties
-        </a>
-
-        <a href="#contact"
-           class="button button-outline">
-          Contact Our Team
-        </a>
-      </div>
+    <div class="card">
+      <h3>Rent a Home</h3>
+      <p>Find a rental that fits your needs and lifestyle.</p>
     </div>
+    <div class="card">
+      <h3>Sell Your Property</h3>
+      <p>Connect with our team to discuss your real estate goals.</p>
+    </div>
+  </div>
+</section>
 
-    <section id="services">
-      <div class="eyebrow">What We Do</div>
-      <h2>Our Real Estate Services</h2>
-
-      <div class="cards">
-        <div class="card">
-          <h3>Buy a Home</h3>
-          <p>
-            Discover properties and explore
-            your homeownership opportunities.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Rent a Home</h3>
-          <p>
-            Find a rental that fits
-            your needs and lifestyle.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Sell Your Property</h3>
-          <p>
-            Connect with our team to discuss
-            your real estate goals.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROPERTY LISTINGS -->
-<section id="properties">
+<section class="properties" id="properties">
   <div class="eyebrow">Explore Our Listings</div>
   <h2>Discover Our Properties</h2>
-  <p>
+  <p class="section-intro">
     Explore properties represented by
     CENTURY 21 Gentry Realtors.
   </p>
 
   <div class="cards">
     <div class="card" id="buy">
+      <div class="property-placeholder">
+        Property photos coming soon
+      </div>
       <h3>Homes for Sale</h3>
-      <p>
-        Discover our available homes for sale.
-      </p>
+      <p>Discover our available homes for sale.</p>
       <p>Listings coming soon.</p>
     </div>
-
     <div class="card" id="rent">
+      <div class="property-placeholder">
+        Property photos coming soon
+      </div>
       <h3>Homes for Rent</h3>
-      <p>
-        Explore our available rental properties.
-      </p>
+      <p>Explore our available rental properties.</p>
       <p>Listings coming soon.</p>
     </div>
   </div>
 </section>
-   <section id="agents" class="team-section">
-  <div class="eyebrow">OUR PROFESSIONALS</div>
+
+<section class="team-section" id="agents">
+  <div class="eyebrow">Our Professionals</div>
   <h2>Meet Our Real Estate Team</h2>
-  <p>Connect with the professionals at CENTURY 21 Gentry Realtors.</p>
+  <p class="section-intro">
+    Connect with the professionals at
+    CENTURY 21 Gentry Realtors.
+  </p>
 
   <div class="team-grid">
     <div class="agent-card">
@@ -376,7 +389,7 @@
     </div>
     <div class="agent-card">
       <h3>Mauro D. Raguseo</h3>
-     <p>Realtor Associate</p>
+      <p>Realtor Associate</p>
       <a href="tel:2017556407">Call Agent</a>
     </div>
     <div class="agent-card">
@@ -406,61 +419,59 @@
     </div>
     <div class="agent-card">
       <h3>Karla Torres</h3>
-     <p>Realtor Associate</p>
+      <p>Realtor Associate</p>
       <a href="tel:2015986019">Call Agent</a>
     </div>
     <div class="agent-card">
       <h3>Mary Giordano</h3>
-   <p>Realtor Associate</p>
+      <p>Realtor Associate</p>
       <a href="tel:2017077411">Call Agent</a>
     </div>
   </div>
 </section>
-    <section class="about" id="about">
-      <div class="eyebrow">Who We Are</div>
-      <h2>Welcome to Gentry Realtors</h2>
 
-      <p>
-        CENTURY 21 Gentry Realtors serves
-        clients navigating the New Jersey
-        real estate market. Whether buying,
-        selling, or renting, our team is
-        here to assist you.
-      </p>
-    </section>
+<section class="about" id="about">
+  <div class="eyebrow">Who We Are</div>
+  <h2>Welcome to Gentry Realtors</h2>
+  <p>
+    CENTURY 21 Gentry Realtors serves clients
+    navigating the New Jersey real estate market.
+    Whether buying, selling, or renting,
+    our team is here to assist you.
+  </p>
+</section>
 
-   <section id="contact">
+<section class="contact" id="contact">
   <div class="eyebrow">Get In Touch</div>
   <h2>Visit Our Office</h2>
-
   <h3>CENTURY 21 Gentry Realtors</h3>
-
   <p>
     170 Main St<br>
     Little Ferry, NJ 07643
   </p>
-
   <p>
     Phone:
     <a href="tel:+12016411333">
       (201) 641-1333
     </a>
   </p>
-
-  <a
-    class="button"
-    href="https://www.google.com/maps/search/?api=1&query=170+Main+St+Little+Ferry+NJ+07643"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
+  <a class="button"
+     href="https://www.google.com/maps/search/?api=1&amp;query=170+Main+St+Little+Ferry+NJ+07643"
+     target="_blank"
+     rel="noopener noreferrer">
     Get Directions
   </a>
 </section>
 
-  <footer>
-    <p>CENTURY 21 Gentry Realtors</p>
-    <p>New Jersey Real Estate</p>
-  </footer>
+</main>
 
+<footer>
+  <p>CENTURY 21 Gentry Realtors</p>
+  <p>New Jersey Real Estate</p>
+  <p>170 Main St, Little Ferry, NJ 07643</p>
+</footer>
+
+</body>
+</html>
 </body>
 </html>
