@@ -1,1 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Properties | CENTURY 21 Gentry Realtors</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #faf9f6;
+      color: #262626;
+    }
+
+    header {
+      background: #fff;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-bottom: 1px solid #e9e4da;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #222;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #aa8e59;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #a78b55;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 90px 20px 70px;
+      background: linear-gradient(
+        135deg,
+        #f5f1e9,
+        #ffffff
+      );
+    }
+
+    .eyebrow {
+      color: #a88a50;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: normal;
+      margin: 16px 0;
+    }
+
+    .hero p {
+      color: #777;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    .properties {
+      max-width: 1180px;
+      margin: auto;
+      padding: 65px 22px 95px;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .filters button {
+      padding: 13px 25px;
+      border: 1px solid #c7b58f;
+      background: transparent;
+      color: #333;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .filters button.active,
+    .filters button:hover {
+      background: #ac925d;
+      color: white;
+    }
+
+    .type-filter {
+      display: block;
+      margin: 0 auto 40px;
+      padding: 13px 18px;
+      border: 1px solid #ddd5c5;
+      background: white;
+      border-radius: 4px;
+      width: min(100%, 300px);
+      font-size: 14px;
+    }
+
+    .property-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .property-card {
+      background: white;
+      border: 1px solid #eee8dc;
+      border-radius: 7px;
+      overflow: hidden;
+    }
+
+    .property-image {
+      height: 220px;
+      background: linear-gradient(
+        135deg,
+        #e7dfd0,
+        #cbbda5
+      );
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Georgia, serif;
+      font-size: 22px;
+      color: #6e6250;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .property-info {
+      padding: 25px;
+    }
+
+    .property-info .status {
+      color: #aa8d55;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .property-info h2 {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: normal;
+      margin: 12px 0;
+    }
+
+    .property-info p {
+      color: #777;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .notice {
+      margin-top: 40px;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .contact-banner {
+      background: #292824;
+      color: white;
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    .contact-banner h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      font-weight: normal;
+    }
+
+    .contact-banner p {
+      color: #d4cec2;
+      line-height: 1.8;
+    }
+
+    .contact-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 14px 30px;
+      background: #b59a62;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    footer {
+      background: #1e1e1c;
+      color: #d4cec2;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 850px) {
+      .property-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 580px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .property-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 65px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      CENTURY <span>21</span> GENTRY
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="properties.html" class="active">Properties</a>
+      <a href="index.html#team">Our Team</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">CENTURY 21 GENTRY REALTORS</div>
+    <h1>Explore Our Properties</h1>
+    <p>
+      Discover homes, apartments, rooms, and more.
+      Your next chapter starts with the right space.
+    </p>
+  </section>
+
+  <main class="properties">
+
+    <div class="filters">
+      <button class="active" data-filter="all">
+        All Properties
+      </button>
+      <button data-filter="sale">
+        For Sale
+      </button>
+      <button data-filter="rent">
+        For Rent
+      </button>
+    </div>
+
+    <select class="type-filter" id="propertyType" aria-label="Property type">
+      <option value="all">All Property Types</option>
+      <option value="house">Single-Family Homes</option>
+      <option value="multifamily">Multi-Family Properties</option>
+      <option value="apartment">Apartments</option>
+      <option value="room">Rooms</option>
+      <option value="condo">Condos & Townhouses</option>
+      <option value="commercial">Commercial Spaces</option>
+    </select>
+
+    <div class="property-grid">
+
+      <article class="property-card" data-status="sale" data-type="house">
+        <div class="property-image">Single-Family Home</div>
+        <div class="property-info">
+          <span class="status">For Sale</span>
+          <h2>Single-Family Homes</h2>
+          <p>Explore comfortable spaces for your next home.</p>
+        </div>
+      </article>
+
+      <article class="property-card" data-status="rent" data-type="apartment">
+        <div class="property-image">Apartment</div>
+        <div class="property-info">
+          <span class="status">For Rent</span>
+          <h2>Apartments</h2>
+          <p>Discover rental options that fit your lifestyle.</p>
+        </div>
+      </article>
+
+      <article class="property-card" data-status="rent" data-type="room">
+        <div class="property-image">Private Room</div>
+        <div class="property-info">
+          <span class="status">For Rent</span>
+          <h2>Rooms for Rent</h2>
+          <p>Find a room that suits your needs and budget.</p>
+        </div>
+      </article>
+
+      <article class="property-card" data-status="sale" data-type="multifamily">
+        <div class="property-image">Multi-Family Property</div>
+        <div class="property-info">
+          <span class="status">For Sale</span>
+          <h2>Multi-Family Properties</h2>
+          <p>Explore properties with multiple residential units.</p>
+        </div>
+      </article>
+
+      <article class="property-card" data-status="sale" data-type="condo">
+        <div class="property-image">Condo / Townhouse</div>
+        <div class="property-info">
+          <span class="status">For Sale</span>
+          <h2>Condos & Townhouses</h2>
+          <p>Explore convenient living options.</p>
+        </div>
+      </article>
+
+      <article class="property-card" data-status="rent" data-type="commercial">
+        <div class="property-image">Commercial Space</div>
+        <div class="property-info">
+          <span class="status">For Rent</span>
+          <h2>Commercial Spaces</h2>
+          <p>Discover spaces for your business.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="notice">
+      Property categories shown for illustration only.
+      Current listings will be displayed when authorized listing
+      data becomes available.
+    </p>
+
+  </main>
+
+  <section class="contact-banner">
+    <h2>Looking for Something Specific?</h2>
+    <p>
+      Our team is here to help you find the right property.
+    </p>
+    <a href="tel:+12016411333" class="contact-button">
+      Call (201) 641-1333
+    </a>
+  </section>
+
+  <footer>
+    CENTURY 21 Gentry Realtors
+    <br>
+    170 Main St, Little Ferry, NJ 07643
+    <br>
+    (201) 641-1333
+  </footer>
+
+  <script>
+    let currentStatus = "all";
+
+    const buttons = document.querySelectorAll(
+      ".filters button"
+    );
+
+    const typeSelect = document.getElementById(
+      "propertyType"
+    );
+
+    const cards = document.querySelectorAll(
+      ".property-card"
+    );
+
+    function updateProperties() {
+      const currentType = typeSelect.value;
+
+      cards.forEach(function(card) {
+        const statusMatches =
+          currentStatus === "all" ||
+          card.dataset.status === currentStatus;
+
+        const typeMatches =
+          currentType === "all" ||
+          card.dataset.type === currentType;
+
+        card.style.display =
+          statusMatches && typeMatches ? "" : "none";
+      });
+    }
+
+    buttons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        currentStatus = button.dataset.filter;
+
+        buttons.forEach(function(item) {
+          item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        updateProperties();
+      });
+    });
+
+    typeSelect.addEventListener(
+      "change",
+      updateProperties
+    );
+  </script>
+
+</body>
+</html>
