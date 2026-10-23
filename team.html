@@ -211,18 +211,20 @@ footer h3 {
 
 .agent-photo {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  background: #eae5dc;
-  overflow: hidden;
+  height: 300px;
+  background: #f3f0eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   overflow: hidden;
 }
 
 .agent-photo img {
-  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  transition: transform .35s;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
 .agent-card:hover .agent-photo img {
@@ -421,7 +423,7 @@ footer p {
   }
 
   .agent-photo {
-    aspect-ratio: 5 / 4;
+   height: 350px;
   }
 
   .agent-info {
