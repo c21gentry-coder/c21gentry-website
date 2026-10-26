@@ -1,1 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore upcoming open houses with CENTURY 21 Gentry Realtors in New Jersey.">
 
+<title>Open Houses | CENTURY 21 Gentry Realtors</title>
+
+<style>
+:root {
+  --gold: #ad8d50;
+  --dark: #242424;
+  --cream: #f8f6f2;
+  --white: #ffffff;
+  --gray: #666666;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+  background: var(--white);
+}
+
+header {
+  background: white;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 27px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+.logo span { color: var(--gold); }
+
+.logo small {
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+  letter-spacing: 4px;
+  margin-top: 7px;
+}
+
+nav {
+  display: flex;
+  gap: 23px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+nav a {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+nav a:hover, nav a.active {
+  color: var(--gold);
+}
+
+.phone-button {
+  background: var(--gold);
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.page-hero {
+  background: var(--cream);
+  padding: 95px 7%;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: clamp(42px, 5vw, 65px);
+  margin: 20px 0;
+}
+
+.page-hero p {
+  color: var(--gray);
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 650px;
+  margin: auto;
+}
+
+.open-house-section {
+  padding: 85px 7%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading h2 {
+  font-size: 40px;
+}
+
+.house-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.house-card {
+  background: white;
+  border: 1px solid #e8e3da;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.house-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.house-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background: #eeeae2;
+}
+
+.house-details {
+  padding: 25px;
+}
+
+.house-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: white;
+  padding: 8px 13px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.house-details h3 {
+  font-size: 27px;
+  margin: 18px 0 8px;
+}
+
+.house-location {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+.house-info {
+  border-top: 1px solid #e8e3da;
+  border-bottom: 1px solid #e8e3da;
+  margin: 20px 0;
+  padding: 15px 0;
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+.house-info strong {
+  color: var(--dark);
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 22px;
+  background: var(--gold);
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid var(--gold);
+}
+
+.button:hover {
+  background: var(--dark);
+}
+
+.contact-section {
+  background: var(--cream);
+  text-align: center;
+  padding: 75px 7%;
+}
+
+.contact-section h2 {
+  font-size: 38px;
+}
+
+.contact-section p {
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 45px 20px;
+  line-height: 1.8;
+}
+
+@media (max-width: 950px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+  nav { justify-content: center; }
+}
+
+@media (max-width: 600px) {
+  .logo { font-size: 23px; }
+  .page-hero { padding: 65px 6%; }
+  .open-house-section { padding: 60px 6%; }
+  .house-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="index.html">
+    CENTURY <span>21</span>
+    <small>GENTRY REALTORS</small>
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="properties.html">Buy</a>
+    <a href="properties.html">Rent</a>
+    <a href="properties.html">Sell</a>
+    <a href="openhouses.html" class="active">Open Houses</a>
+    <a href="team.html">Our Team</a>
+    <a href="index.html#about">About Us</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <a class="phone-button" href="tel:+12016411333">
+    (201) 641-1333
+  </a>
+</header>
+
+<main>
+
+<section class="page-hero">
+  <div class="eyebrow">Discover Your Next Home</div>
+  <h1>Upcoming <span style="color:#ad8d50;">Open Houses</span></h1>
+  <p>
+    Step inside and explore beautiful properties
+    throughout New Jersey. Join us at our upcoming
+    open houses and find a place to call home.
+  </p>
+</section>
+
+<section class="open-house-section">
+
+  <div class="section-heading">
+    <div class="eyebrow">You're Invited</div>
+    <h2>Explore Our Open Houses</h2>
+  </div>
+
+  <div class="house-grid">
+
+    <!-- OPEN HOUSE CARD 1 -->
+    <!-- Replace the sample information with a real event -->
+
+    <article class="house-card">
+
+      <img src="openhouse1.jpg"
+           alt="Open house property"
+           class="house-image">
+
+      <div class="house-details">
+
+        <span class="house-badge">Open House</span>
+
+        <h3>Property Address</h3>
+
+        <p class="house-location">
+          City, New Jersey
+        </p>
+
+        <div class="house-info">
+          <div><strong>Date:</strong> To Be Announced</div>
+          <div><strong>Time:</strong> To Be Announced</div>
+          <div><strong>Price:</strong> Contact Us</div>
+        </div>
+
+        <a href="tel:+12016411333" class="button">
+          Contact Our Office
+        </a>
+
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+<section class="contact-section">
+  <div class="eyebrow">Have Questions?</div>
+
+  <h2>Find Your Next Home With Us</h2>
+
+  <p>
+    Contact CENTURY 21 Gentry Realtors for
+    information about our upcoming open houses.
+  </p>
+
+  <a href="tel:+12016411333" class="button">
+    Call (201) 641-1333
+  </a>
+</section>
+
+</main>
+
+<footer>
+  <p>CENTURY 21 Gentry Realtors</p>
+  <p>New Jersey Real Estate</p>
+  <p>170 Main St, Little Ferry, NJ 07643</p>
+</footer>
+
+</body>
+</html>
