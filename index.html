@@ -256,6 +256,120 @@ footer {
   }
   section { padding: 65px 6%; }
 }
+/* ELEGANT INTERACTIVE BUTTON CARDS */
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  padding: 45px 5%;
+  background: #f8f6f2;
+}
+
+.quick-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 185px;
+  padding: 25px 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #242424;
+
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #f1ece3
+  );
+
+  border: 1px solid #d5c4a6;
+  border-radius: 12px;
+
+  box-shadow:
+    5px 5px 12px rgba(0,0,0,0.12),
+    -3px -3px 10px rgba(255,255,255,0.9),
+    inset 1px 1px 2px rgba(255,255,255,0.8);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.quick-link:last-child {
+  border: 1px solid #d5c4a6;
+}
+
+.quick-link h3 {
+  font-size: 23px;
+  margin: 0 0 12px;
+  color: #242424;
+  text-decoration: none;
+}
+
+.quick-link p {
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0;
+  text-decoration: none;
+}
+
+.quick-link span {
+  display: inline-block;
+  margin-top: 18px;
+  color: #ad8d50;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+/* HOVER EFFECT */
+.quick-link:hover {
+  transform: translateY(-3px);
+  background: #f5efe5;
+
+  box-shadow:
+    3px 3px 8px rgba(0,0,0,0.12),
+    inset 2px 2px 5px rgba(0,0,0,0.06);
+}
+
+/* PRESSED EFFECT */
+.quick-link:active {
+  transform: translateY(3px);
+
+  box-shadow:
+    inset 5px 5px 12px rgba(0,0,0,0.18),
+    inset -3px -3px 8px rgba(255,255,255,0.9);
+
+  background: #eae3d7;
+}
+
+.quick-link:focus-visible {
+  outline: 3px solid #ad8d50;
+  outline-offset: 4px;
+}
+
+/* MOBILE */
+@media (max-width: 950px) {
+  .quick-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .quick-links {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 30px 6%;
+  }
+
+  .quick-link {
+    min-height: 150px;
+  }
+}
 </style>
 </head>
 
