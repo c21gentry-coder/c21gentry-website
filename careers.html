@@ -1,1 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore real estate career opportunities with CENTURY 21 Gentry Realtors in Little Ferry, New Jersey.">
+<title>Join Our Team | CENTURY 21 Gentry Realtors</title>
 
+<style>
+:root {
+  --gold: #ad8d50;
+  --dark: #242424;
+  --cream: #f8f6f2;
+  --white: #ffffff;
+  --gray: #666666;
+  --border: #e8e3da;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--white);
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 27px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+.logo span { color: var(--gold); }
+
+.logo small {
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+  letter-spacing: 4px;
+  margin-top: 7px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+nav a:hover,
+nav a.active { color: var(--gold); }
+
+.phone-button {
+  display: inline-block;
+  background: var(--gold);
+  color: white;
+  padding: 13px 19px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.phone-button:hover { background: var(--dark); }
+
+.hero {
+  padding: 100px 6%;
+  min-height: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--cream);
+}
+
+.hero-content { max-width: 780px; }
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.15;
+  margin: 18px 0;
+}
+
+.hero h1 span { color: var(--gold); }
+
+.hero p {
+  max-width: 650px;
+  margin: auto;
+  color: var(--gray);
+  font-size: 17px;
+}
+
+.intro {
+  padding: 80px 6%;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: clamp(32px, 4vw, 43px);
+  margin: 15px 0;
+}
+
+.intro p {
+  max-width: 750px;
+  margin: auto;
+  color: var(--gray);
+}
+
+.benefits {
+  background: var(--cream);
+  padding: 65px 6%;
+}
+
+.benefits-grid {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.benefit-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-bottom: 3px solid var(--gold);
+  padding: 35px 25px;
+  text-align: center;
+}
+
+.benefit-card h3 {
+  font-size: 25px;
+  margin: 0 0 12px;
+}
+
+.benefit-card p {
+  font-size: 14px;
+  color: var(--gray);
+  margin: 0;
+}
+
+.form-section {
+  padding: 80px 6%;
+  background: white;
+}
+
+.form-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 45px;
+  background: var(--cream);
+  border-top: 4px solid var(--gold);
+}
+
+.form-container h2 {
+  text-align: center;
+  font-size: 38px;
+  margin: 10px 0;
+}
+
+.form-description {
+  color: var(--gray);
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group { margin-bottom: 22px; }
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #d8d5cf;
+  background: white;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 17px;
+  border: none;
+  background: var(--gold);
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.submit-button:hover { background: var(--dark); }
+
+.privacy-note {
+  font-size: 12px;
+  color: var(--gray);
+  text-align: center;
+  margin-top: 18px;
+}
+
+.contact-banner {
+  padding: 65px 6%;
+  text-align: center;
+  background: var(--cream);
+}
+
+.contact-banner h2 {
+  font-size: 36px;
+  margin: 12px 0;
+}
+
+.contact-banner p { color: var(--gray); }
+
+.button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 15px 25px;
+  background: var(--gold);
+  color: white;
+  text-decoration: none;
+}
+
+footer {
+  padding: 45px 20px;
+  background: var(--dark);
+  color: white;
+  text-align: center;
+}
+
+footer h3 { font-size: 25px; }
+
+footer p {
+  color: #d4d4d4;
+  font-size: 13px;
+}
+
+footer a { color: white; }
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin: 20px 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 13px;
+}
+
+@media (max-width: 800px) {
+  .benefits-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+}
+
+@media (max-width: 600px) {
+  header { justify-content: center; text-align: center; }
+  nav { width: 100%; }
+  .hero { padding: 70px 6%; }
+  .form-container { padding: 28px 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="index.html">
+    CENTURY <span>21</span>
+    <small>GENTRY REALTORS</small>
+  </a>
+
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="properties.html">Properties</a>
+    <a href="openhouses.html">Open Houses</a>
+    <a href="sell.html">Sell</a>
+    <a href="team.html">Our Team</a>
+    <a href="careers.html" class="active">Careers</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <a class="phone-button" href="tel:+12016411333">
+    (201) 641-1333
+  </a>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Build Your Future With Us</div>
+    <h1>Join Our <span>Team</span></h1>
+    <p>
+      Explore a career in real estate with
+      CENTURY 21 Gentry Realtors.
+      Connect with our office and take the next step
+      toward your professional goals.
+    </p>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="eyebrow">Careers at CENTURY 21 Gentry</div>
+  <h2>Your Next Chapter Starts Here</h2>
+  <p>
+    Whether you are an experienced real estate professional
+    or exploring opportunities in the industry,
+    we would love to learn more about you.
+    Share your background and interests with our team.
+  </p>
+</section>
+
+<section class="benefits">
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <h3>Professional Connections</h3>
+      <p>Connect with a local real estate office serving communities throughout New Jersey.</p>
+    </div>
+
+    <div class="benefit-card">
+      <h3>Real Estate Opportunities</h3>
+      <p>Tell us about your experience, qualifications, and career interests.</p>
+    </div>
+
+    <div class="benefit-card">
+      <h3>Take the Next Step</h3>
+      <p>Start a conversation with our office about potential opportunities.</p>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="application">
+  <div class="form-container">
+
+    <div class="eyebrow" style="text-align:center;">
+      Career Inquiry
+    </div>
+
+    <h2>Interested in Joining Us?</h2>
+
+    <p class="form-description">
+      Complete the form below and our office can review
+      your information and contact you about potential opportunities.
+    </p>
+
+    <form action="https://formspree.io/f/xppppoqo" method="POST">
+
+      <input type="hidden" name="_subject" value="New Career Inquiry - C21 Gentry">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input id="name" type="text" name="full_name" required autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input id="email" type="email" name="email" required autocomplete="email">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input id="phone" type="tel" name="phone" required autocomplete="tel">
+        </div>
+
+        <div class="form-group">
+          <label for="license">NJ Real Estate License Status *</label>
+          <select id="license" name="license_status" required>
+            <option value="">Select an option</option>
+            <option>Active NJ Real Estate License</option>
+            <option>Currently Studying for My License</option>
+            <option>Interested in Getting Licensed</option>
+            <option>Not Applicable</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="experience">Real Estate Experience</label>
+        <select id="experience" name="real_estate_experience">
+          <option value="">Select your experience</option>
+          <option>No Experience</option>
+          <option>Less Than 1 Year</option>
+          <option>1-3 Years</option>
+          <option>3-5 Years</option>
+          <option>More Than 5 Years</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="interest">Area of Interest *</label>
+        <select id="interest" name="area_of_interest" required>
+          <option value="">Select an option</option>
+          <option>Real Estate Sales Agent</option>
+          <option>Real Estate Rental Agent</option>
+          <option>Administrative / Office Position</option>
+          <option>Other Opportunities</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Tell Us About Yourself</label>
+        <textarea id="message" name="message" placeholder="Share your experience, professional goals, or any questions you have..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label style="font-weight:normal;">
+          <input type="checkbox" name="contact_consent" value="yes" required style="width:auto;margin-right:8px;">
+          I agree to be contacted by CENTURY 21 Gentry Realtors regarding my inquiry.
+        </label>
+      </div>
+
+      <button class="submit-button" type="submit">
+        Submit Career Inquiry
+      </button>
+
+      <p class="privacy-note">
+        Your information will be used to respond to your career inquiry.
+        Submitting this form does not guarantee employment or affiliation.
+      </p>
+
+    </form>
+  </div>
+</section>
+
+<section class="contact-banner">
+  <div class="eyebrow">Get in Touch</div>
+  <h2>Questions About Our Office?</h2>
+  <p>Contact CENTURY 21 Gentry Realtors to learn more.</p>
+  <a class="button" href="tel:+12016411333">Call Our Office</a>
+</section>
+
+</main>
+
+<footer>
+  <h3>CENTURY 21 Gentry Realtors</h3>
+  <p>Your Real Estate Partner in New Jersey</p>
+  <p>170 Main St, Little Ferry, NJ 07643</p>
+  <p><a href="tel:+12016411333">(201) 641-1333</a></p>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="properties.html">Properties</a>
+    <a href="sell.html">Sell Your Property</a>
+    <a href="team.html">Our Team</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+
+  <p>&copy; <span id="year">2026</span> CENTURY 21 Gentry Realtors. All rights reserved.</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
