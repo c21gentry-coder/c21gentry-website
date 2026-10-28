@@ -340,6 +340,76 @@ footer {
   font-size: 13px;
   text-decoration: underline;
 }
+/* OPEN HOUSE CARD - LUXURY FIX */
+
+.house-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 650px);
+  justify-content: center;
+  gap: 35px;
+}
+
+.house-card {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e8e3da;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.09);
+}
+
+.house-image {
+  display: block;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.house-details {
+  padding: 35px;
+  text-align: left;
+}
+
+.house-details h3 {
+  font-size: 32px;
+  margin: 18px 0 8px;
+}
+
+.house-info {
+  margin: 25px 0;
+  padding: 20px 0;
+  line-height: 2;
+}
+
+.house-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.house-actions .button {
+  min-width: 0;
+  padding: 16px 10px;
+  font-size: 11px;
+}
+
+@media (max-width: 600px) {
+  .house-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .house-image {
+    height: 240px;
+  }
+
+  .house-details {
+    padding: 24px;
+  }
+
+  .house-actions {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 
