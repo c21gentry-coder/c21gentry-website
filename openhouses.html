@@ -244,6 +244,102 @@ footer {
   .open-house-section { padding: 60px 6%; }
   .house-grid { grid-template-columns: 1fr; }
 }
+/* ELEGANT OPEN HOUSE DESIGN */
+
+.house-card {
+  border: 1px solid #e8e3da;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+.house-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.house-details {
+  padding: 30px;
+}
+
+.house-details h3 {
+  font-size: 30px;
+  margin: 18px 0 10px;
+}
+
+.house-badge {
+  background: #ad8d50;
+  color: white;
+  border-radius: 3px;
+  font-size: 11px;
+  padding: 9px 15px;
+  letter-spacing: 2px;
+}
+
+.house-info {
+  margin: 25px 0;
+  padding: 20px 0;
+  border-top: 1px solid #e8e3da;
+  border-bottom: 1px solid #e8e3da;
+}
+
+.house-info div {
+  margin-bottom: 7px;
+}
+
+.house-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.house-actions .button {
+  flex: 1;
+  text-align: center;
+  min-width: 160px;
+  cursor: pointer;
+}
+
+.calendar-button {
+  background: #242424;
+  border-color: #242424;
+}
+
+.calendar-button:hover {
+  background: #ad8d50;
+  border-color: #ad8d50;
+}
+
+.directions-button {
+  background: transparent;
+  color: #242424;
+  border-color: #ad8d50;
+}
+
+.directions-button:hover {
+  background: #ad8d50;
+  color: white;
+}
+
+.calendar-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.calendar-options[hidden] {
+  display: none;
+}
+
+.calendar-options a {
+  color: #80652e;
+  font-size: 13px;
+  text-decoration: underline;
+}
 </style>
 </head>
 
@@ -292,37 +388,7 @@ footer {
 
   <div class="house-grid">
 
-    <!-- OPEN HOUSE CARD 1 -->
-    <!-- Replace the sample information with a real event -->
-
-    <article class="house-card">
-
-      <img src="openhouse1.jpg"
-           alt="Open house property"
-           class="house-image">
-
-      <div class="house-details">
-
-        <span class="house-badge">Open House</span>
-
-        <h3>Property Address</h3>
-
-        <p class="house-location">
-          City, New Jersey
-        </p>
-
-        <div class="house-info">
-          <div><strong>Date:</strong> To Be Announced</div>
-          <div><strong>Time:</strong> To Be Announced</div>
-          <div><strong>Price:</strong> Contact Us</div>
-        </div>
-
-        <a href="tel:+12016411333" class="button">
-          Contact Our Office
-        </a>
-
-      </div>
-    </article>
+  
 
   </div>
 
@@ -337,6 +403,94 @@ footer {
     Contact CENTURY 21 Gentry Realtors for
     information about our upcoming open houses.
   </p>
+  <!-- OPEN HOUSE CARD 1 -->
+
+<article class="house-card">
+
+  <img
+    src="openhouse1.jpg"
+    alt="Property available for an open house"
+    class="house-image"
+  >
+
+  <div class="house-details">
+
+    <span class="house-badge">
+      YOU'RE INVITED
+    </span>
+
+    <h3 id="event-address">
+      Property Address
+    </h3>
+
+    <p class="house-location" id="event-city">
+      City, New Jersey
+    </p>
+
+    <div class="house-info">
+
+      <div>
+        <strong>Date:</strong>
+        <span id="event-date">To Be Announced</span>
+      </div>
+
+      <div>
+        <strong>Time:</strong>
+        <span id="event-time">To Be Announced</span>
+      </div>
+
+      <div>
+        <strong>Price:</strong>
+        <span id="event-price">Contact Us</span>
+      </div>
+
+    </div>
+
+    <div class="house-actions">
+
+      <button
+        type="button"
+        class="button calendar-button"
+        onclick="toggleCalendar()"
+        aria-expanded="false"
+        aria-controls="calendar-options"
+        id="calendar-toggle"
+      >
+        + Add to Calendar
+      </button>
+
+      <a
+        id="directions-link"
+        href="https://www.google.com/maps"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button directions-button"
+      >
+        Get Directions
+      </a>
+
+    </div>
+
+    <div
+      id="calendar-options"
+      class="calendar-options"
+      hidden
+    >
+      <a id="google-calendar"
+         href="#"
+         target="_blank"
+         rel="noopener noreferrer">
+        Google Calendar
+      </a>
+
+      <a id="apple-calendar" href="#">
+        Apple / Outlook Calendar
+      </a>
+    </div>
+
+  </div>
+
+</article>
 
   <a href="tel:+12016411333" class="button">
     Call (201) 641-1333
@@ -350,6 +504,193 @@ footer {
   <p>New Jersey Real Estate</p>
   <p>170 Main St, Little Ferry, NJ 07643</p>
 </footer>
+<script>
+
+/* EDIT YOUR OPEN HOUSE INFORMATION HERE */
+
+const openHouse = {
+  address: "147 7th Street",
+  city: "Saddle Brook, New Jersey 07663",
+  date: "2026-10-25",
+  startTime: "13:30",
+  endTime: "15:30",
+  price: "Contact Us"
+};
+
+/*
+DATE FORMAT: YYYY-MM-DD
+Example: "2026-11-07"
+
+TIME FORMAT: 24 HOURS
+13:00 = 1:00 PM
+16:00 = 4:00 PM
+*/
+
+function formatTime(time) {
+  const [hour, minute] = time.split(":").map(Number);
+  return new Date(2000, 0, 1, hour, minute)
+    .toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit"
+    });
+}
+
+function toggleCalendar() {
+  const options = document.getElementById("calendar-options");
+  const button = document.getElementById("calendar-toggle");
+
+  options.hidden = !options.hidden;
+  button.setAttribute("aria-expanded", String(!options.hidden));
+}
+
+function formatICSDate(date, time) {
+  return date.replace(/-/g, "") + "T" +
+    time.replace(":", "") + "00";
+}
+
+function escapeICS(value) {
+  return String(value)
+    .replace(/\\/g, "\\\\")
+    .replace(/\n/g, "\\n")
+    .replace(/,/g, "\\,")
+    .replace(/;/g, "\\;");
+}
+
+function downloadCalendar(event) {
+  event.preventDefault();
+
+  const location = openHouse.address + ", " + openHouse.city;
+
+  const start = formatICSDate(openHouse.date, openHouse.startTime);
+  const end = formatICSDate(openHouse.date, openHouse.endTime);
+
+  const title = "Open House - CENTURY 21 Gentry Realtors";
+
+  const ics = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//C21 Gentry Realtors//Open Houses//EN",
+    "CALSCALE:GREGORIAN",
+    "BEGIN:VEVENT",
+    "DTSTART;TZID=America/New_York:" + start,
+    "DTEND;TZID=America/New_York:" + end,
+    "SUMMARY:" + escapeICS(title),
+    "LOCATION:" + escapeICS(location),
+    "DESCRIPTION:" + escapeICS("Join CENTURY 21 Gentry Realtors for an Open House. Call (201) 641-1333."),
+    "END:VEVENT",
+    "END:VCALENDAR"
+  ].join("\r\n");
+
+  const blob = new Blob([ics], {
+    type: "text/calendar;charset=utf-8"
+  });
+
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = "C21-Gentry-Open-House.ics";
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function setupOpenHouse() {
+
+  document.getElementById("event-address").textContent =
+    openHouse.address;
+
+  document.getElementById("event-city").textContent =
+    openHouse.city;
+
+  document.getElementById("event-price").textContent =
+    openHouse.price;
+
+  const location = openHouse.address + ", " + openHouse.city;
+
+  document.getElementById("directions-link").href =
+    "https://www.google.com/maps/search/?api=1&query=" +
+    encodeURIComponent(location);
+
+  const calendarButton =
+    document.getElementById("calendar-toggle");
+
+  if (!openHouse.date) {
+    calendarButton.disabled = true;
+    calendarButton.textContent = "Date Coming Soon";
+    calendarButton.style.opacity = "0.5";
+    return;
+  }
+
+  const startDate = new Date(
+    openHouse.date + "T" + openHouse.startTime + ":00"
+  );
+
+  const endDate = new Date(
+    openHouse.date + "T" + openHouse.endTime + ":00"
+  );
+
+  if (
+    Number.isNaN(startDate.getTime()) ||
+    Number.isNaN(endDate.getTime()) ||
+    endDate <= startDate
+  ) {
+    calendarButton.disabled = true;
+    calendarButton.textContent = "Schedule Unavailable";
+    return;
+  }
+
+  document.getElementById("event-date").textContent =
+    startDate.toLocaleDateString("en-US", {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+      year: "numeric"
+    });
+
+  document.getElementById("event-time").textContent =
+    formatTime(openHouse.startTime) +
+    " - " +
+    formatTime(openHouse.endTime);
+
+  const googleStart =
+    formatICSDate(openHouse.date, openHouse.startTime);
+
+  const googleEnd =
+    formatICSDate(openHouse.date, openHouse.endTime);
+
+  const googleURL = new URL(
+    "https://calendar.google.com/calendar/render"
+  );
+
+  googleURL.searchParams.set("action", "TEMPLATE");
+  googleURL.searchParams.set(
+    "text",
+    "Open House | CENTURY 21 Gentry Realtors"
+  );
+  googleURL.searchParams.set(
+    "dates",
+    googleStart + "/" + googleEnd
+  );
+  googleURL.searchParams.set("ctz", "America/New_York");
+  googleURL.searchParams.set("location", location);
+  googleURL.searchParams.set(
+    "details",
+    "Join us for an Open House! Contact (201) 641-1333."
+  );
+
+  document.getElementById("google-calendar").href =
+    googleURL.toString();
+
+  document.getElementById("apple-calendar")
+    .addEventListener("click", downloadCalendar);
+}
+
+document.addEventListener("DOMContentLoaded", setupOpenHouse);
+
+</script>
 
 </body>
 </html>
