@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="description" content="Explore upcoming open houses with CENTURY 21 Gentry Realtors in New Jersey.">
 
 <title>Open Houses | CENTURY 21 Gentry Realtors</title>
@@ -14,9 +15,12 @@
   --cream: #f8f6f2;
   --white: #ffffff;
   --gray: #666666;
+  --border: #e8e3da;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -44,7 +48,9 @@ header {
   line-height: 1.1;
 }
 
-.logo span { color: var(--gold); }
+.logo span {
+  color: var(--gold);
+}
 
 .logo small {
   display: block;
@@ -67,7 +73,8 @@ nav a {
   font-size: 13px;
 }
 
-nav a:hover, nav a.active {
+nav a:hover,
+nav a.active {
   color: var(--gold);
 }
 
@@ -82,7 +89,7 @@ nav a:hover, nav a.active {
 
 .page-hero {
   background: var(--cream);
-  padding: 95px 7%;
+  padding: 85px 7%;
   text-align: center;
 }
 
@@ -90,7 +97,7 @@ nav a:hover, nav a.active {
   color: var(--gold);
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
 }
 
@@ -100,7 +107,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: clamp(42px, 5vw, 65px);
+  font-size: clamp(40px, 5vw, 64px);
   margin: 20px 0;
 }
 
@@ -113,7 +120,7 @@ h1 {
 }
 
 .open-house-section {
-  padding: 85px 7%;
+  padding: 80px 6%;
   max-width: 1400px;
   margin: auto;
 }
@@ -125,64 +132,70 @@ h1 {
 
 .section-heading h2 {
   font-size: 40px;
+  margin: 15px 0;
 }
 
 .house-grid {
   display: grid;
-  grid-template-columns:
-    repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 600px));
+  justify-content: center;
+  gap: 35px;
 }
 
 .house-card {
   background: white;
-  border: 1px solid #e8e3da;
+  border: 1px solid var(--border);
+  border-radius: 12px;
   overflow: hidden;
-  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  transition: transform .25s, box-shadow .25s;
 }
 
 .house-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 45px rgba(0,0,0,0.12);
 }
 
 .house-image {
   width: 100%;
-  height: 250px;
+  height: 340px;
   object-fit: cover;
+  display: block;
   background: #eeeae2;
 }
 
 .house-details {
-  padding: 25px;
+  padding: 32px;
 }
 
 .house-badge {
   display: inline-block;
   background: var(--gold);
   color: white;
-  padding: 8px 13px;
+  padding: 9px 15px;
   font-size: 11px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
+  border-radius: 3px;
 }
 
 .house-details h3 {
-  font-size: 27px;
-  margin: 18px 0 8px;
+  font-size: 32px;
+  margin: 20px 0 8px;
 }
 
 .house-location {
   color: var(--gray);
-  font-size: 14px;
+  font-size: 15px;
+  margin: 0;
 }
 
 .house-info {
-  border-top: 1px solid #e8e3da;
-  border-bottom: 1px solid #e8e3da;
-  margin: 20px 0;
-  padding: 15px 0;
-  line-height: 1.9;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: 25px 0;
+  padding: 20px 0;
+  line-height: 2;
   font-size: 14px;
 }
 
@@ -190,21 +203,72 @@ h1 {
   color: var(--dark);
 }
 
+.house-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
 .button {
   display: inline-block;
-  padding: 15px 22px;
+  padding: 16px 18px;
   background: var(--gold);
   color: white;
   text-decoration: none;
+  text-align: center;
+  font-family: Arial, sans-serif;
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
   border: 1px solid var(--gold);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .2s;
 }
 
 .button:hover {
   background: var(--dark);
+  border-color: var(--dark);
+}
+
+.calendar-button {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.calendar-button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.directions-button {
+  background: transparent;
+  color: var(--dark);
+  border-color: var(--gold);
+}
+
+.directions-button:hover {
+  background: var(--gold);
+  color: white;
+  border-color: var(--gold);
+}
+
+.calendar-options {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.calendar-options[hidden] {
+  display: none;
+}
+
+.calendar-options a {
+  color: #80652e;
+  font-size: 13px;
+  text-decoration: underline;
 }
 
 .contact-section {
@@ -220,6 +284,7 @@ h1 {
 .contact-section p {
   color: var(--gray);
   line-height: 1.8;
+  margin-bottom: 25px;
 }
 
 footer {
@@ -235,165 +300,29 @@ footer {
     justify-content: center;
     text-align: center;
   }
-  nav { justify-content: center; }
+
+  nav {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 600px) {
-  .logo { font-size: 23px; }
-  .page-hero { padding: 65px 6%; }
-  .open-house-section { padding: 60px 6%; }
-  .house-grid { grid-template-columns: 1fr; }
-}
-/* ELEGANT OPEN HOUSE DESIGN */
+  .logo {
+    font-size: 23px;
+  }
 
-.house-card {
-  border: 1px solid #e8e3da;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #ffffff;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-}
+  .page-hero {
+    padding: 65px 6%;
+  }
 
-.house-image {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  display: block;
-}
+  .open-house-section {
+    padding: 60px 5%;
+  }
 
-.house-details {
-  padding: 30px;
-}
+  .section-heading h2 {
+    font-size: 32px;
+  }
 
-.house-details h3 {
-  font-size: 30px;
-  margin: 18px 0 10px;
-}
-
-.house-badge {
-  background: #ad8d50;
-  color: white;
-  border-radius: 3px;
-  font-size: 11px;
-  padding: 9px 15px;
-  letter-spacing: 2px;
-}
-
-.house-info {
-  margin: 25px 0;
-  padding: 20px 0;
-  border-top: 1px solid #e8e3da;
-  border-bottom: 1px solid #e8e3da;
-}
-
-.house-info div {
-  margin-bottom: 7px;
-}
-
-.house-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.house-actions .button {
-  flex: 1;
-  text-align: center;
-  min-width: 160px;
-  cursor: pointer;
-}
-
-.calendar-button {
-  background: #242424;
-  border-color: #242424;
-}
-
-.calendar-button:hover {
-  background: #ad8d50;
-  border-color: #ad8d50;
-}
-
-.directions-button {
-  background: transparent;
-  color: #242424;
-  border-color: #ad8d50;
-}
-
-.directions-button:hover {
-  background: #ad8d50;
-  color: white;
-}
-
-.calendar-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.calendar-options[hidden] {
-  display: none;
-}
-
-.calendar-options a {
-  color: #80652e;
-  font-size: 13px;
-  text-decoration: underline;
-}
-/* OPEN HOUSE CARD - LUXURY FIX */
-
-.house-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 650px);
-  justify-content: center;
-  gap: 35px;
-}
-
-.house-card {
-  width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #ffffff;
-  border: 1px solid #e8e3da;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.09);
-}
-
-.house-image {
-  display: block;
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-}
-
-.house-details {
-  padding: 35px;
-  text-align: left;
-}
-
-.house-details h3 {
-  font-size: 32px;
-  margin: 18px 0 8px;
-}
-
-.house-info {
-  margin: 25px 0;
-  padding: 20px 0;
-  line-height: 2;
-}
-
-.house-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.house-actions .button {
-  min-width: 0;
-  padding: 16px 10px;
-  font-size: 11px;
-}
-
-@media (max-width: 600px) {
   .house-grid {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -404,6 +333,10 @@ footer {
 
   .house-details {
     padding: 24px;
+  }
+
+  .house-details h3 {
+    font-size: 28px;
   }
 
   .house-actions {
@@ -441,7 +374,12 @@ footer {
 
 <section class="page-hero">
   <div class="eyebrow">Discover Your Next Home</div>
-  <h1>Upcoming <span style="color:#ad8d50;">Open Houses</span></h1>
+
+  <h1>
+    Upcoming
+    <span style="color:#ad8d50;">Open Houses</span>
+  </h1>
+
   <p>
     Step inside and explore beautiful properties
     throughout New Jersey. Join us at our upcoming
@@ -458,13 +396,101 @@ footer {
 
   <div class="house-grid">
 
-  
+    <!-- OPEN HOUSE CARD 1 -->
+
+    <article class="house-card">
+
+      <img
+        src="openhouse1.jpg"
+        alt="147 7th Street, Saddle Brook, NJ"
+        class="house-image"
+      >
+
+      <div class="house-details">
+
+        <span class="house-badge">
+          YOU'RE INVITED
+        </span>
+
+        <h3 id="event-address">
+          147 7th Street
+        </h3>
+
+        <p class="house-location" id="event-city">
+          Saddle Brook, New Jersey 07663
+        </p>
+
+        <div class="house-info">
+
+          <div>
+            <strong>Date:</strong>
+            <span id="event-date">To Be Announced</span>
+          </div>
+
+          <div>
+            <strong>Time:</strong>
+            <span id="event-time">To Be Announced</span>
+          </div>
+
+          <div>
+            <strong>Price:</strong>
+            <span id="event-price">Contact Us</span>
+          </div>
+
+        </div>
+
+        <div class="house-actions">
+
+          <button
+            type="button"
+            class="button calendar-button"
+            id="calendar-toggle"
+            onclick="toggleCalendar()"
+            aria-expanded="false"
+            aria-controls="calendar-options"
+          >
+            + Add to Calendar
+          </button>
+
+          <a
+            id="directions-link"
+            href="https://www.google.com/maps"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button directions-button"
+          >
+            Get Directions
+          </a>
+
+        </div>
+
+        <div id="calendar-options"
+             class="calendar-options"
+             hidden>
+
+          <a id="google-calendar"
+             href="#"
+             target="_blank"
+             rel="noopener noreferrer">
+            Google Calendar
+          </a>
+
+          <a id="apple-calendar" href="#">
+            Apple / Outlook Calendar
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
 
   </div>
 
 </section>
 
 <section class="contact-section">
+
   <div class="eyebrow">Have Questions?</div>
 
   <h2>Find Your Next Home With Us</h2>
@@ -473,98 +499,11 @@ footer {
     Contact CENTURY 21 Gentry Realtors for
     information about our upcoming open houses.
   </p>
-  <!-- OPEN HOUSE CARD 1 -->
-
-<article class="house-card">
-
-  <img
-    src="openhouse1.jpg"
-    alt="Property available for an open house"
-    class="house-image"
-  >
-
-  <div class="house-details">
-
-    <span class="house-badge">
-      YOU'RE INVITED
-    </span>
-
-    <h3 id="event-address">
-      Property Address
-    </h3>
-
-    <p class="house-location" id="event-city">
-      City, New Jersey
-    </p>
-
-    <div class="house-info">
-
-      <div>
-        <strong>Date:</strong>
-        <span id="event-date">To Be Announced</span>
-      </div>
-
-      <div>
-        <strong>Time:</strong>
-        <span id="event-time">To Be Announced</span>
-      </div>
-
-      <div>
-        <strong>Price:</strong>
-        <span id="event-price">Contact Us</span>
-      </div>
-
-    </div>
-
-    <div class="house-actions">
-
-      <button
-        type="button"
-        class="button calendar-button"
-        onclick="toggleCalendar()"
-        aria-expanded="false"
-        aria-controls="calendar-options"
-        id="calendar-toggle"
-      >
-        + Add to Calendar
-      </button>
-
-      <a
-        id="directions-link"
-        href="https://www.google.com/maps"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="button directions-button"
-      >
-        Get Directions
-      </a>
-
-    </div>
-
-    <div
-      id="calendar-options"
-      class="calendar-options"
-      hidden
-    >
-      <a id="google-calendar"
-         href="#"
-         target="_blank"
-         rel="noopener noreferrer">
-        Google Calendar
-      </a>
-
-      <a id="apple-calendar" href="#">
-        Apple / Outlook Calendar
-      </a>
-    </div>
-
-  </div>
-
-</article>
 
   <a href="tel:+12016411333" class="button">
     Call (201) 641-1333
   </a>
+
 </section>
 
 </main>
@@ -574,30 +513,29 @@ footer {
   <p>New Jersey Real Estate</p>
   <p>170 Main St, Little Ferry, NJ 07643</p>
 </footer>
+
 <script>
 
-/* EDIT YOUR OPEN HOUSE INFORMATION HERE */
+/* EDIT OPEN HOUSE INFORMATION HERE */
 
 const openHouse = {
   address: "147 7th Street",
   city: "Saddle Brook, New Jersey 07663",
-  date: "2026-10-25",
+  date: "",
   startTime: "13:30",
   endTime: "15:30",
   price: "Contact Us"
 };
 
 /*
-DATE FORMAT: YYYY-MM-DD
-Example: "2026-11-07"
-
-TIME FORMAT: 24 HOURS
-13:00 = 1:00 PM
-16:00 = 4:00 PM
+Set date to the confirmed future event date.
+Example: date: "2026-11-07"
+Leave blank if no event is scheduled.
 */
 
 function formatTime(time) {
   const [hour, minute] = time.split(":").map(Number);
+
   return new Date(2000, 0, 1, hour, minute)
     .toLocaleTimeString("en-US", {
       hour: "numeric",
@@ -610,7 +548,11 @@ function toggleCalendar() {
   const button = document.getElementById("calendar-toggle");
 
   options.hidden = !options.hidden;
-  button.setAttribute("aria-expanded", String(!options.hidden));
+
+  button.setAttribute(
+    "aria-expanded",
+    String(!options.hidden)
+  );
 }
 
 function formatICSDate(date, time) {
@@ -629,12 +571,14 @@ function escapeICS(value) {
 function downloadCalendar(event) {
   event.preventDefault();
 
-  const location = openHouse.address + ", " + openHouse.city;
+  const location =
+    openHouse.address + ", " + openHouse.city;
 
-  const start = formatICSDate(openHouse.date, openHouse.startTime);
-  const end = formatICSDate(openHouse.date, openHouse.endTime);
+  const start =
+    formatICSDate(openHouse.date, openHouse.startTime);
 
-  const title = "Open House - CENTURY 21 Gentry Realtors";
+  const end =
+    formatICSDate(openHouse.date, openHouse.endTime);
 
   const ics = [
     "BEGIN:VCALENDAR",
@@ -644,7 +588,7 @@ function downloadCalendar(event) {
     "BEGIN:VEVENT",
     "DTSTART;TZID=America/New_York:" + start,
     "DTEND;TZID=America/New_York:" + end,
-    "SUMMARY:" + escapeICS(title),
+    "SUMMARY:" + escapeICS("Open House - CENTURY 21 Gentry Realtors"),
     "LOCATION:" + escapeICS(location),
     "DESCRIPTION:" + escapeICS("Join CENTURY 21 Gentry Realtors for an Open House. Call (201) 641-1333."),
     "END:VEVENT",
@@ -660,6 +604,7 @@ function downloadCalendar(event) {
 
   link.href = url;
   link.download = "C21-Gentry-Open-House.ics";
+
   document.body.appendChild(link);
   link.click();
   link.remove();
@@ -668,7 +613,6 @@ function downloadCalendar(event) {
 }
 
 function setupOpenHouse() {
-
   document.getElementById("event-address").textContent =
     openHouse.address;
 
@@ -678,7 +622,8 @@ function setupOpenHouse() {
   document.getElementById("event-price").textContent =
     openHouse.price;
 
-  const location = openHouse.address + ", " + openHouse.city;
+  const location =
+    openHouse.address + ", " + openHouse.city;
 
   document.getElementById("directions-link").href =
     "https://www.google.com/maps/search/?api=1&query=" +
@@ -690,7 +635,6 @@ function setupOpenHouse() {
   if (!openHouse.date) {
     calendarButton.disabled = true;
     calendarButton.textContent = "Date Coming Soon";
-    calendarButton.style.opacity = "0.5";
     return;
   }
 
@@ -736,16 +680,24 @@ function setupOpenHouse() {
   );
 
   googleURL.searchParams.set("action", "TEMPLATE");
+
   googleURL.searchParams.set(
     "text",
     "Open House | CENTURY 21 Gentry Realtors"
   );
+
   googleURL.searchParams.set(
     "dates",
     googleStart + "/" + googleEnd
   );
-  googleURL.searchParams.set("ctz", "America/New_York");
+
+  googleURL.searchParams.set(
+    "ctz",
+    "America/New_York"
+  );
+
   googleURL.searchParams.set("location", location);
+
   googleURL.searchParams.set(
     "details",
     "Join us for an Open House! Contact (201) 641-1333."
@@ -758,7 +710,10 @@ function setupOpenHouse() {
     .addEventListener("click", downloadCalendar);
 }
 
-document.addEventListener("DOMContentLoaded", setupOpenHouse);
+document.addEventListener(
+  "DOMContentLoaded",
+  setupOpenHouse
+);
 
 </script>
 
